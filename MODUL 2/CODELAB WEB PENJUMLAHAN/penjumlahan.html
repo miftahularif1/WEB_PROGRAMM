@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Penjumlahan</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f0f0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+        .container {
+            background-color: #fff;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.1);
+            width: 350px;
+            text-align: center;
+        }
+        h2 {
+            margin-bottom: 20px;
+        }
+        input {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+        }
+        button {
+            padding: 10px 20px;
+            margin: 10px 5px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        .btn-add {
+            background-color: #4CAF50;
+            color: white;
+        }
+        .btn-reset {
+            background-color: #f44336;
+            color: white;
+        }
+        .result {
+            margin-top: 20px;
+            font-size: 18px;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <h2>Penjumlahan</h2>
+    <input type="number" id="num1" placeholder="Bilangan pertama">
+    <input type="number" id="num2" placeholder="Bilangan kedua">
+    <div>
+        <button class="btn-add" onclick="addNumbers()">Jumlahkan</button>
+        <button class="btn-reset" onclick="resetFields()">Reset</button>
+    </div>
+    <div class="result">
+        Hasil: <span id="result">0</span>
+    </div>
+</div>
+
+<script>
+    function addNumbers() {
+        var num1 = document.getElementById("num1").value;
+        var num2 = document.getElementById("num2").value;
+        var result = parseFloat(num1) + parseFloat(num2);
+        document.getElementById("result").textContent = result;
+    }
+
+    function resetFields() {
+        document.getElementById("num1").value = '';
+        document.getElementById("num2").value = '';
+        document.getElementById("result").textContent = '0';
+    }
+</script>
+
+</body>
+</html>
