@@ -3,102 +3,117 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Dewaweb</title>
+    <title>Dewaweb Hosting</title>
     <link rel="stylesheet" href="styles.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet"/>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="script.js" defer></script>
 </head>
-<body>
+<body class="bg-gray-100">
     <!-- Header -->
-    <header>
-        <div class="logo">
-            <img src="logo.png" alt="Dewaweb Logo">
-        </div>
-        <nav>
-            <ul>
-                <li><a href="#">Hosting</a></li>
-                <li><a href="#">Server</a></li>
-                <li><a href="#">Domain</a></li>
-                <li><a href="#">Service</a></li>
-                <li><a href="#">Promo</a></li>
-            </ul>
-        </nav>
-        <div class="icons">
-            <a href="#"><img src="cart.png" alt="Cart"></a>
-            <a href="#"><img src="account.png" alt="Account"></a>
+    <header class="bg-white shadow">
+        <div class="container mx-auto flex justify-between items-center py-4 px-6">
+            <div class="flex items-center">
+                <img src="https://storage.googleapis.com/a1aa/image/r279Z3OEYMo7AFNL5eYWmZOL630USfXmBdb4GhskMjnR6wmTA.jpg" alt="Dewaweb logo" class="h-10" width="50" height="50">
+                <nav class="ml-6">
+                    <ul class="flex space-x-4">
+                        <li><a href="#" class="text-gray-700 hover:text-gray-900">Hosting</a></li>
+                        <li><a href="#" class="text-gray-700 hover:text-gray-900">Server</a></li>
+                        <li><a href="#" class="text-gray-700 hover:text-gray-900">Domain</a></li>
+                        <li><a href="#" class="text-gray-700 hover:text-gray-900">Service</a></li>
+                        <li><a href="#" class="text-gray-700 hover:text-gray-900">Promo</a></li>
+                    </ul>
+                </nav>
+            </div>
+            <div class="flex items-center space-x-4">
+                <a href="#" class="text-gray-700 hover:text-gray-900"><i class="fas fa-search"></i></a>
+                <a href="#" class="text-gray-700 hover:text-gray-900"><i class="fas fa-shopping-cart"></i></a>
+                <a href="#" class="text-gray-700 hover:text-gray-900">Account</a>
+            </div>
         </div>
     </header>
 
     <!-- Main Content -->
-    <main>
-        <div class="hero-section">
-            <div class="text">
-                <h1>Website Cepat & Aman</h1>
-                <h2>Dengan Hosting Terbaik</h2>
-                <p>Diskon 50% mulai dari Rp30.000/bln</p>
-                <p>GRATIS: Domain Selamanya, SSL Premium, dan WP Premium Addons</p>
-            </div>
-            <div class="hero-image">
-                <img src="hero-image.png" alt="Hosting Image">
-            </div>
+    <main class="bg-blue-500 text-white text-center py-20">
+        <h1 class="text-3xl font-bold">Website Cepat & Aman</h1>
+        <h2 class="text-4xl font-bold mt-2">Dengan Hosting Terbaik</h2>
+        <p class="text-xl mt-4">Diskon 50% mulai dari Rp30.000/bln.</p>
+        <div class="mt-4 offer-details">
+            <span class="bg-red-500 text-white px-2 py-1 rounded">GRATIS</span>
+            <span class="ml-2">Domain Selamanya</span>
+            <span class="ml-2">SSL Premium</span>
+            <span class="ml-2">Premium Addons</span>
+            <span class="ml-2">Support Cashback 12 Juta</span>
+        </div>
+        <div class="mt-8">
+            <img src="https://storage.googleapis.com/a1aa/image/6Z9QdVUqkurVFZ9YdaBjr0q3LU2T9gO3FmYWkIfkn4ZHdYzJA.jpg" alt="Promotional image with characters" class="mx-auto" width="300" height="300">
         </div>
     </main>
 
     <!-- Contact Section -->
-    <section class="contact-section">
-        <div class="contact-info">
-            <p>Contact Our Ninja Support 24/7</p>
-            <p>We are here to help and solve your problems, anytime.</p>
-        </div>
-        <div class="contact-icons">
-            <img src="phone-icon.png" alt="Phone Icon">
-            <img src="chat-icon.png" alt="Chat Icon">
+    <section class="bg-blue-200 text-center py-10">
+        <div class="container mx-auto flex justify-center items-center">
+            <img src="https://storage.googleapis.com/a1aa/image/wYi3UUvRgb4tMlZe95e4HexOc3chS5ag89ViFwGS59Og0hNnA.jpg" alt="Ninja support image" class="h-24" width="100" height="100">
+            <div class="ml-4">
+                <h3 class="text-xl font-bold">Contact Our Ninja Support 24/7</h3>
+                <p>We are here to help and solve your problems, anytime.</p>
+            </div>
+            <div class="ml-4 flex space-x-4">
+                <a href="#" class="text-orange-500 text-3xl"><i class="fas fa-phone"></i></a>
+                <a href="#" class="text-orange-500 text-3xl"><i class="fas fa-envelope"></i></a>
+            </div>
         </div>
     </section>
 
     <!-- Footer -->
-    <footer>
-        <div class="footer-info">
-            <p>PT DEWADEWI</p>
-            <p>Malang, Dau</p>
-            <p>Email: miflahul.arif@gmail.com</p>
-            <p>Phone: 0812-3456-789</p>
-            <p>Instagram: @miflahul_arif</p>
+    <footer class="bg-gray-900 text-white py-10">
+        <div class="container mx-auto grid grid-cols-1 md:grid-cols-4 gap-8">
+            <div>
+                <h4 class="font-bold">PT DEWADEWI</h4>
+                <p>Malang, Dau</p>
+                <p>Email: miftahularif@gmail.com</p>
+                <p>Phone: 0812-3456-789</p>
+                <p>Insta: miftahul_arif</p>
+            </div>
+            <div>
+                <h4 class="font-bold">COMPANY</h4>
+                <ul>
+                    <li><a href="#" class="hover:underline">About Us</a></li>
+                    <li><a href="#" class="hover:underline">Design</a></li>
+                    <li><a href="#" class="hover:underline">Grafis</a></li>
+                </ul>
+            </div>
+            <div>
+                <h4 class="font-bold">OTHERS</h4>
+                <ul>
+                    <li><a href="#" class="hover:underline">Promo Dewaweb</a></li>
+                    <li><a href="#" class="hover:underline">Gratis untuk Non-Profit</a></li>
+                </ul>
+            </div>
+            <div>
+                <h4 class="font-bold">LAYANAN</h4>
+                <ul>
+                    <li><a href="#" class="hover:underline">Fitur Yang Diberikan</a></li>
+                    <li><a href="#" class="hover:underline">Benefit Yang Dikasih</a></li>
+                    <li><a href="#" class="hover:underline">Pak Vincent</a></li>
+                </ul>
+            </div>
+            <div>
+                <h4 class="font-bold">SUPPORT</h4>
+                <ul>
+                    <li><a href="#" class="hover:underline">Status Buka Tiket</a></li>
+                    <li><a href="#" class="hover:underline">Support</a></li>
+                </ul>
+            </div>
         </div>
-        <div class="footer-links">
-            <div>
-                <h3>COMPANY</h3>
-                <ul>
-                    <li><a href="#">About Us</a></li>
-                    <li><a href="#">Design</a></li>
-                    <li><a href="#">Grafis</a></li>
-                </ul>
+        <div class="container mx-auto flex justify-between items-center mt-8">
+            <img src="https://storage.googleapis.com/a1aa/image/r279Z3OEYMo7AFNL5eYWmZOL630USfXmBdb4GhskMjnR6wmTA.jpg" alt="Dewaweb logo" class="h-10" width="100" height="50">
+            <div class="flex space-x-4">
+                <a href="#" class="text-white"><i class="fab fa-facebook"></i></a>
+                <a href="#" class="text-white"><i class="fab fa-twitter"></i></a>
+                <a href="#" class="text-white"><i class="fab fa-instagram"></i></a>
+                <a href="#" class="text-white"><i class="fab fa-whatsapp"></i></a>
             </div>
-            <div>
-                <h3>LAYANAN</h3>
-                <ul>
-                    <li><a href="#">Fitur Yang Diberikan</a></li>
-                    <li><a href="#">Benefit Yang Dikasih</a></li>
-                    <li><a href="#">Pak Vincent</a></li>
-                </ul>
-            </div>
-            <div>
-                <h3>SUPPORT</h3>
-                <ul>
-                    <li><a href="#">Status Buka Tiket</a></li>
-                    <li><a href="#">Support</a></li>
-                </ul>
-            </div>
-            <div>
-                <h3>OTHERS</h3>
-                <ul>
-                    <li><a href="#">Promo Dewaweb</a></li>
-                    <li><a href="#">Gratis untuk Non-Profit</a></li>
-                </ul>
-            </div>
-        </div>
-        <div class="footer-social">
-            <a href="#"><img src="facebook.png" alt="Facebook"></a>
-            <a href="#"><img src="instagram.png" alt="Instagram"></a>
-            <a href="#"><img src="whatsapp.png" alt="WhatsApp"></a>
         </div>
     </footer>
 </body>
