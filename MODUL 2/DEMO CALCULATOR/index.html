@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculator Design</title>
+    <style>
+        body {
+            margin: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #6A1B9A;
+            font-family: 'Arial', sans-serif;
+        }
+
+        .container {
+            text-align: center;
+            color: white;
+        }
+
+        .calculator {
+            width: 100%;
+            max-width: 300px;
+            border-radius: 30px;
+            overflow: hidden;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+        }
+
+        .display {
+            background-color: #212121;
+            color: white;
+            text-align: right;
+            padding: 20px;
+            font-size: 48px;
+            height: 150px;
+            box-sizing: border-box;
+        }
+
+        .display small {
+            display: block;
+            font-size: 18px;
+            color: #888;
+        }
+
+        .buttons {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+        }
+
+        .button {
+            padding: 20px;
+            font-size: 24px;
+            border: 1px solid #333;
+            background-color: #333;
+            color: white;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        .button:hover {
+            background-color: #444;
+        }
+
+        .button.operator {
+            background-color: #AB47BC;
+        }
+
+        .button.zero {
+            grid-column: span 2;
+        }
+
+        #clear {
+            background-color: #E53935;
+        }
+
+        #clear:hover {
+            background-color: #EF5350;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="calculator">
+            <div class="display">
+                <small id="operation"></small>
+                <span id="result">0</span>
+            </div>
+            <div class="buttons">
+                <div class="button" id="clear">AC</div>
+                <div class="button" data-operator="divide">÷</div>
+                <div class="button" data-operator="multiply">×</div>
+                <div class="button operator" id="backspace">⌫</div>
+                <div class="button" data-number="7">7</div>
+                <div class="button" data-number="8">8</div>
+                <div class="button" data-number="9">9</div>
+                <div class="button operator" data-operator="subtract">-</div>
+                <div class="button" data-number="4">4</div>
+                <div class="button" data-number="5">5</div>
+                <div class="button" data-number="6">6</div>
+                <div class="button operator" data-operator="add">+</div>
+                <div class="button" data-number="1">1</div>
+                <div class="button" data-number="2">2</div>
+                <div class="button" data-number="3">3</div>
+                <div class="button operator" id="equals" style="grid-row: span 2;">=</div>
+                <div class="button zero" data-number="0">0</div>
+                <div class="button" data-operator="modulus">%</div>
+                <div class="button" data-operator="power">^</div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        const resultElement = document.getElementById('result');
+        const operationElement = document.getElementById('operation');
+        let currentValue = '';
+        let previousValue = '';
+        let operator = '';
+
+        // Update display
+        function updateDisplay() {
+            resultElement.textContent = currentValue || '0';
+            operationElement.textContent = `${previousValue} ${operator}`;
+        }
+
+        // Clear all
+        document.getElementById('clear').addEventListener('click', function() {
+            currentValue = '';
+            previousValue = '';
+            operator = '';
+            updateDisplay();
+        });
+
+        // Handle number inputs
+        document.querySelectorAll('[data-number]').forEach(button => {
+            button.addEventListener('click', function() {
+                currentValue += this.textContent;
+                updateDisplay();
+            });
+        });
+
+        // Handle operator inputs
+        document.querySelectorAll('[data-operator]').forEach(button => {
+            button.addEventListener('click', function() {
+                if (currentValue === '') return;
+                if (operator) calculate(); // If there's an existing operator, calculate first
+                operator = getOperatorSymbol(this.getAttribute('data-operator'));
+                previousValue = currentValue;
+                currentValue = '';
+                updateDisplay();
+            });
+        });
+
+        // Get operator symbols
+        function getOperatorSymbol(operation) {
+            switch (operation) {
+                case 'add':
+                    return '+';
+                case 'subtract':
+                    return '-';
+                case 'multiply':
+                    return '×';
+                case 'divide':
+                    return '÷';
+                case 'modulus':
+                    return '%';
+                case 'power':
+                    return '^';
+                default:
+                    return '';
+            }
+        }
+
+        // Perform calculation
+        function calculate() {
+            let result = 0;
+            const a = parseFloat(previousValue);
+            const b = parseFloat(currentValue);
+
+            switch (operator) {
+                case '+':
+                    result = a + b;
+                    break;
+                case '-':
+                    result = a - b;
+                    break;
+                case '×':
+                    result = a * b;
+                    break;
+                case '÷':
+                    if (b === 0) {
+                        alert("Tidak bisa membagi dengan 0!");
+                        return;
+                    }
+                    result = a / b;
+                    break;
+                case '%':
+                    result = a % b;
+                    break;
+                case '^':
+                    result = Math.pow(a, b);
+                    break;
+            }
+
+            currentValue = result.toString();
+            previousValue = '';
+            operator = '';
+            updateDisplay();
+        }
+
+        // Handle equals button
+        document.getElementById('equals').addEventListener('click', calculate);
+
+        // Handle backspace
+        document.getElementById('backspace').addEventListener('click', function() {
+            currentValue = currentValue.slice(0, -1);
+            updateDisplay();
+        });
+
+        // Initialize display
+        updateDisplay();
+    </script>
+</body>
+</html>
